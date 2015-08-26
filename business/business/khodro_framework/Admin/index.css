@@ -1,0 +1,103 @@
+/* ::::: file:///D:/Admin%20Templates/13188098674295-spring-time-free-standard/spring-time-standard/html/css/style.css ::::: */
+
+* { padding: 0pt; margin: 0pt; outline: 0pt none; }
+body { background: none repeat scroll 0% 0% rgb(249, 235, 174); font-family: Verdana,sans-serif; font-size: 11px; line-height: 14px; color: rgb(94, 94, 94); }
+input, textarea, select { font-family: Verdana,sans-serif; font-size: 13px; }
+textarea { overflow: hidden; }
+.field { border: 1px solid rgb(211, 207, 199); background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 5px; }
+.small-field { border: 1px solid rgb(211, 207, 199); background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 3px 1px; font-size: 11px; }
+.checkbox { width: 13px; height: 13px; vertical-align: top; position: relative; top: 2px; }
+.button { background: url('img/button.gif') repeat-x scroll 0pt 0pt rgb(238, 238, 238); border: 1px solid rgb(177, 168, 116); color: rgb(127, 127, 127); font-size: 11px; padding: 2px 6px; cursor: pointer; line-height: 14px ! important; }
+.button:hover { color: rgb(51, 51, 51); border-color: rgb(133, 123, 66); }
+.field:focus { color: rgb(0, 0, 0); border-color: rgb(133, 123, 66); }
+a { color: rgb(186, 76, 50); text-decoration: underline; cursor: pointer; }
+a:hover { color: rgb(141, 52, 31); text-decoration: none; }
+.left, .alignleft { float: left; display: inline; }
+.right, .alignright { float: right; display: inline; }
+.cl { font-size: 0pt; line-height: 0; clear: both; display: block; height: 0pt; }
+.ac { text-align: center ! important; }
+h1 { font-size: 22px; line-height: 24px; color: rgb(255, 255, 255); font-weight: normal; }
+h1 a { color: rgb(255, 255, 255); text-decoration: none; }
+h2 { font-size: 15px; font-weight: normal; }
+h3 { font-size: 12px; line-height: 14px; font-weight: normal; }
+h3 a { text-decoration: none; }
+.shell { width: 988px; margin: 0pt auto; }
+#header { height: 89px; background: url('img/header.gif') repeat scroll 0% 0% transparent; white-space: nowrap; }
+#header h1 { float: left; display: inline; padding-top: 12px; }
+#top-navigation { float: right; white-space: nowrap; color: rgb(255, 255, 255); padding-top: 15px; }
+#top-navigation a { color: rgb(255, 255, 255); }
+#top-navigation span { color: rgb(220, 165, 152); }
+#top { height: 53px; }
+#navigation { height: 36px; }
+#navigation ul { list-style-type: none; }
+#navigation ul li { float: left; display: inline; margin-right: 2px; }
+#navigation ul li a, #navigation ul li a span { float: left; height: 36px; background: url('img/tab.gif') no-repeat scroll 0pt 0pt transparent; padding: 0pt 0pt 0pt 15px; }
+#navigation ul li a span { background-position: right 0pt; padding: 0pt 15px 0pt 0pt; }
+#navigation ul li a { line-height: 36px; color: rgb(144, 117, 37); text-decoration: none; }
+#navigation ul li a.active, #navigation ul li a:hover { background-position: 0pt bottom; }
+#navigation ul li a.active span, #navigation ul li a:hover span { background-position: right bottom; }
+#navigation ul li a.active { font-size: 12px; font-weight: bold; color: rgb(136, 126, 66); }
+#container { padding: 20px 0pt; }
+.small-nav { color: rgb(151, 139, 72); padding-bottom: 20px; }
+.small-nav a { color: rgb(111, 102, 54); }
+#main {  }
+#content { float: left; width: 750px; }
+#sidebar { float: right; width: 225px; }
+.table {  }
+.table th { background: url('img/th.gif') repeat-x scroll 0pt 0pt rgb(255, 253, 250); color: rgb(129, 129, 129); text-align: left; padding: 7px 10px; border-bottom: 1px solid rgb(210, 209, 203); }
+.table td { background: none repeat scroll 0% 0% rgb(251, 252, 252); border-bottom: 1px solid rgb(224, 224, 224); padding: 8px 10px; }
+.table tr.odd td { background: none repeat scroll 0% 0% rgb(248, 248, 248); }
+.table tr:hover td { background: none repeat scroll 0% 0% rgb(255, 249, 225); }
+.table a.ico {  }
+.box { background: none repeat scroll 0% 0% rgb(251, 252, 252); height: 100%; padding: 1px; margin-bottom: 20px; }
+.box-head { background: none repeat scroll 0% 0% rgb(186, 76, 50); height: 32px; color: rgb(255, 255, 255); padding: 0pt 10px; line-height: 32px; white-space: nowrap; border-bottom: 1px solid rgb(255, 255, 255); }
+.box-head .right { padding-top: 5px; line-height: 13px; }
+.box-head .right label, .box-head .right input { float: left; }
+.box-head .right label { padding: 4px 0pt 0pt; }
+.box-head .right input { margin-left: 5px; }
+.pagging { height: 20px; padding: 8px 10px; line-height: 19px; color: rgb(148, 148, 148); }
+.pagging a { background: url('img/pagging.gif') repeat-x scroll 0pt 0pt transparent; height: 20px; float: left; padding: 0pt 8px; border: 1px solid rgb(213, 213, 213); text-decoration: none; color: rgb(148, 148, 148); margin-left: 5px; }
+.pagging a:hover { border-color: rgb(140, 53, 33); background: none repeat scroll 0% 0% rgb(186, 76, 50); color: rgb(255, 255, 255); }
+.pagging span { float: left; margin-left: 5px; padding-top: 2px; }
+a.ico { color: rgb(157, 156, 154); font-size: 10px; text-decoration: none; padding: 0pt 0pt 0pt 14px; background-repeat: no-repeat; background-position: 0pt 0pt; }
+a.ico:hover { color: rgb(51, 51, 51); }
+a.del { background-image: url('img/del.gif'); }
+a.edit { background-image: url('img/edit.gif'); margin-left: 14px; }
+.form { padding: 15px 10px 5px; }
+.form label { display: block; font-weight: bold; font-size: 13px; padding-bottom: 4px; }
+.form label span { color: rgb(153, 153, 153); font-weight: normal; }
+.form .field { display: block; }
+.form .inline-field .field { display: inline; }
+.form .req { font-size: 13px; float: right; white-space: nowrap; color: rgb(153, 153, 153); }
+.form p { padding-bottom: 15px; }
+.size1 { width: 716px; }
+.size2 { width: 80px; }
+.size3 { width: 120px; }
+textarea.size1 { height: 180px; }
+.buttons { text-align: right; padding: 10px; background: none repeat scroll 0% 0% rgb(238, 238, 238); border-top: 1px solid rgb(224, 224, 224); }
+.buttons .button { margin-left: 3px; }
+.box-content { padding: 10px; }
+.sort { border-top: 1px solid rgb(224, 224, 224); padding-top: 10px; margin-top: 15px; }
+.sort label { display: block; font-weight: bold; }
+.sort .field { display: block; margin-top: 5px; }
+.sort select.field { width: 203px; }
+.box-content p { padding-top: 10px; }
+.select-all {  }
+.select-all label { text-decoration: underline; padding-left: 4px; }
+.add-button, .add-button span { float: left; height: 26px; background: url('img/add-button.gif') no-repeat scroll 0pt 0pt transparent; padding: 0pt 0pt 0pt 28px; }
+.add-button span { background-position: right 0pt; padding: 0pt 10px 0pt 0pt; }
+.add-button { font-weight: bold; font-size: 12px; color: rgb(116, 116, 116); text-decoration: none; line-height: 26px; }
+.add-button:hover { color: rgb(51, 51, 51); }
+#footer { height: 44px; background: url('img/footer.gif') repeat scroll 0% 0% transparent; line-height: 44px; color: rgb(255, 255, 255); }
+#footer a { color: rgb(255, 255, 255); }
+.msg { position: relative; padding-right: 35px; margin-bottom: 10px; }
+.msg p { padding: 9px 10px 9px 40px; font-size: 12px; background-repeat: no-repeat; background-position: 10px 5px; }
+.msg a.close { font-size: 0pt; line-height: 0; position: absolute; top: 0pt; right: 0pt; width: 34px; height: 34px; background: url('img/close.gif') repeat scroll 0% 0% transparent; text-indent: -4000px; }
+.msg-ok p { background-color: rgb(255, 250, 194); border: 1px solid rgb(219, 214, 162); color: rgb(94, 92, 64); background-image: url('img/msg-ok.gif'); }
+.msg-error p { background-color: rgb(243, 197, 152); border: 1px solid rgb(232, 176, 132); color: rgb(186, 76, 50); background-image: url('img/msg-error.gif'); }
+.box { border-radius: 5px 5px 5px 5px; box-shadow: 0pt 0pt 6px rgb(151, 143, 108); }
+.box-head { border-top-left-radius: 5px; border-top-right-radius: 5px; }
+.field, .button { border-radius: 4px 4px 4px 4px; }
+.small-field, .button, .pagging a { border-radius: 3px 3px 3px 3px; }
+.msg p { border-radius: 6px 6px 6px 6px; }
+.button { box-shadow: 0pt 0pt 2px rgb(151, 143, 108); }

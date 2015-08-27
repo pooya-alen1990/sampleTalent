@@ -1,11 +1,12 @@
 <?php
     require_once "core/core.php";
+    DatabaseHandler::Execute("UPDATE blogs SET activate = !activate WHERE id = '1' ");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>check</title>
 </head>
 <body>
 

@@ -10,6 +10,8 @@ define("SITE_ROOT", dirname(dirname(__FILE__)));
 
 require_once SITE_ROOT . "/config/config.php";
 
+date_default_timezone_set('Asia/Tehran');
+
 /**
  * php debug mode
  */
@@ -45,8 +47,6 @@ if(LOCAL_MODE){
 
 }
 
-echo DB_PASSWORD;
-
 /**
  * php session mode
  */
@@ -68,5 +68,5 @@ require_once SITE_ROOT . "/messages/messages.php";
  * @param $class_name
  */
 function __autoload($class_name) {
-    require_once SITE_ROOT . "/model/class." . $class_name . '.php';
+    require_once SITE_ROOT . "/model/" . $class_name . '.php';
 }

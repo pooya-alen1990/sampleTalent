@@ -262,7 +262,8 @@ Class " . strtoupper($tblName) . "
     $dalMethods
 }
 ?>" ;
-    $fh = fopen('classes/'.$tblName . '.php', 'w');
+	$fileName = strtoupper($tblName);
+    $fh = fopen('classes/'.$fileName . '.php', 'w');
     fwrite($fh, $DAL);
     fclose($fh);
 }

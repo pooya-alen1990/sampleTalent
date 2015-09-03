@@ -10,9 +10,9 @@
 /**
  * public setting
  */
-define("DEBUGGING_MODE" , true);
+define("DEBUGGING_MODE", true);
 
-define("SESSION_ENABLED" , true);
+define("SESSION_ENABLED", true);
 
 
 /**
@@ -23,11 +23,11 @@ define('LOG_ERRORS_FILE', '/var/www/html/talentyab/errors.log');
 
 
 //define("KEY" , "!@##$^&*(123dfgdSDGSDGsdf");
-define("KEY" , "123");
+define("KEY", "123");
 
-if($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '127.0.0.1'){
+if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '127.0.0.1') {
     define('LOCAL_MODE', true);
-}else{
+} else {
     define('LOCAL_MODE', false);
 }
 

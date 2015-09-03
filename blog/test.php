@@ -72,7 +72,7 @@ if (isset($_POST["valuesTest"])) {
     }
 
 
-    $query = 'SELECT blogs.id,blogs.title,blogs.text, blogs.image, b_a.blog_id, b_a.audience_id, b_s.blog_id, b_s.subject_id, b_t.blog_id, b_t.type_id
+    $query = 'SELECT blogs.id,blogs.title,blogs.text,blogs.read_time, blogs.image, b_a.blog_id, b_a.audience_id, b_s.blog_id, b_s.subject_id, b_t.blog_id, b_t.type_id
                     FROM blogs
                     INNER JOIN b_a ON blogs.id = b_a.blog_id
                     INNER JOIN b_s ON blogs.id = b_s.blog_id
@@ -91,7 +91,7 @@ if (isset($_POST["valuesTest"])) {
                             <a href="#" class="article-img">
                                 <div class="article-info">
                                     <span class="article-view">1300 بازدید</span>
-                                    <span class="article-time">7 دقیقه</span>
+                                    <span class="article-time">'.$blog["read_time"].' دقیقه</span>
                                 </div>
                                 <img src="../view/images/article.png">
                                 <div class="article-hover"></div>

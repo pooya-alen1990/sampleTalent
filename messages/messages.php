@@ -42,4 +42,26 @@ define("ADMIN_CHANGE_PASSWORD_FIELDS", "<hr>
 													لطفا تمامی فیلد های مورد نظر را پر کنید.
 												</div>
 											</div>");
+
+
+/**
+ * messeages for admin change password page
+ */
+define("ADMIN_EDIT_SUCCESS", '<div class="col-lg-12 col-md-6">
+												<br style="margin:20px 0;">
+												<div class="alert alert-success alert-dismissable">
+												  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+												ویرایش اطلاعات شما با موفقیت انجام شد.
+												</div>
+											</div>');
+define("ADMIN_EDIT_FAILED", "<hr>
+											<div class='col-lg-12 col-md-6'>
+												<br style='margin:20px 0;'>
+												<div class='alert alert-danger alert-dismissable'>
+												  <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+													خطا در سیستم ، لطفا بعدا تلاش کنید.
+												</div>
+											</div>");
+
+
 ?>

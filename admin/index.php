@@ -54,7 +54,7 @@ if (!isset($_SESSION['MM_admin_mobile'])) {
             <ul class="nav navbar-nav navbar-right" style="float:left !important">
                 <li><a href="logout.php">خروج</a></li>
                 <li><a href="#">داشبورد</a></li>
-                <li><a href="#">تنظیمات</a></li>
+                <li><a href="index.php?page=edit">ویرایش</a></li>
                 <li><a href="index.php?page=password_update">تغییر رمز عبور</a></li>
                 <li>
                     <a href="index.php?page=home"><?php echo $_SESSION['MM_admin_first_name'] . ' ' . $_SESSION['MM_admin_last_name']; ?></a>

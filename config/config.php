@@ -45,9 +45,9 @@ define('DB_DATABASE_LOCAL', 'bakhti');
  * database config host mode
  */
 define('DB_SERVER_HOST', 'localhost');
-define('DB_USERNAME_HOST', 'root');
-define('DB_PASSWORD_HOST', '*******');
-define('DB_DATABASE_HOST', 'bakhti');
+define('DB_USERNAME_HOST', 'admin_bakhti');
+define('DB_PASSWORD_HOST', 'Talentyab1394');
+define('DB_DATABASE_HOST', 'admin_bakhti');
 
 
 

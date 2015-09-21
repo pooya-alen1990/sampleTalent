@@ -63,5 +63,18 @@ define("ADMIN_EDIT_FAILED", "<hr>
 												</div>
 											</div>");
 
-
+define("COMMENT_SUCCESS",'<div class="col-lg-12 col-md-6">
+								<br style="margin:10px 0;">
+								<div class="alert alert-success alert-dismissable">
+									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+												کاربر گرامی، دیدگاه شما با موفقیت ثبت شد. به علت تعدد نظرات، دیدگاه شما پس از بررسی مدیر بخش خبر نمایش داده خواهد شد.
+								</div>
+						</div>');
+define("COMMENT_FAILED",'<div class="col-lg-12 col-md-6">
+								<br style="margin:10px 0;">
+								<div class="alert alert-danger alert-dismissable">
+									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+										لطفا تمامی فیلد های مورد نظر را پر کنید.
+								</div>
+						</div>');
 ?>

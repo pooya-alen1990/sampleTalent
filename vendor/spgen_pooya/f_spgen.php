@@ -266,6 +266,10 @@ Class " . strtoupper($tblName) . "
     $fh = fopen('classes/'.$fileName . '.php', 'w');
     fwrite($fh, $DAL);
     fclose($fh);
+
+    $fh2 = fopen('../../model/'.$fileName . '.php', 'w');
+    fwrite($fh2, $DAL);
+    fclose($fh2);
 }
           
 function GetRealTypes($field)

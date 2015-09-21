@@ -1,0 +1,316 @@
+			#croppic{
+				width: 400px;  /* MANDATORY */
+				height: 208px; /* MANDATORY */
+				position: relative;  /* MANDATORY */
+				
+				margin: 50px 70px 20px;
+				border: 3px  solid #FFF;
+				box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				border-radius: 2px;
+				background-image: url(../images/placeholder.png);
+				background-repeat: no-repeat;
+				background-position: center;
+				box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+			}
+			
+			/* DO NOT CHANGE FROM HERE ( unless u know what u are doing) */
+			.cropImgWrapper{
+				cursor: -webkit-grab;
+				cursor: grab;
+			}
+			.cropImgWrapper:active{
+				cursor: -webkit-grabbing;
+				cursor: grabbing;
+			}
+			
+			.cropImgUpload{
+				z-index:2;
+				position:absolute;
+				height:28px;
+				display:block;
+				top: -30px;
+				right: -2px;
+				font-family:sans-serif;
+				width:20px;
+				height:20px;
+				text-align:center;
+				line-height:20px;
+				color:#FFF;
+			}
+			
+			.cropControls{
+				z-index:2;
+				position:absolute;
+				height:30px;
+				display:block;
+				/* top: -31px; */
+				top: -1px;
+				right: -1px;
+				font-family:sans-serif;
+				background-color:rgba(0,0,0,0.35); 
+			}
+			
+			.cropControls i{
+				display:block;
+				float:left;
+				margin:0;
+				cursor:pointer;
+				background-image:url('../images/cropperIcons.png');	
+				width:30px;
+				height:30px;
+				text-align:center;
+				line-height:20px;
+				color:#FFF;
+				font-size:13px;
+				font-weight: bold;
+				font-style: normal;
+				
+			}
+			
+			.cropControls i:hover{ background-color:rgba(0,0,0,0.7);  }
+			
+			.cropControls i.cropControlZoomMuchIn{ background-position:0px 0px;}
+			.cropControls i.cropControlZoomIn{ background-position:-30px 0px; }
+			.cropControls i.cropControlZoomOut{ background-position:-60px 0px; }
+			.cropControls i.cropControlZoomMuchOut{ background-position:-90px 0px; }
+			.cropControls i.cropControlRotateLeft{ background-position:-210px 0px; }
+			.cropControls i.cropControlRotateRight{ background-position:-240px 0px; }
+			.cropControls i.cropControlCrop{ background-position:-120px 0px;}
+			.cropControls i.cropControlUpload{ background-image: none;}
+			.cropControls i.cropControlUpload:before , .cropControls i.cropControlUpload:after{
+				font-family: "rayweb";
+			    font-style: normal;
+			    font-weight: normal;
+			    speak: none;
+			 	font-size: 26px;
+			    display: inline-block;
+			    text-decoration: inherit;
+			    width: 1em;
+			    margin-right: .2em;
+			    text-align: center;
+			    /* opacity: .8; */
+			 
+			    /* For safety - reset parent styles, that can break glyph codes*/
+			    font-variant: normal;
+			    text-transform: none;
+			 
+			    /* fix buttons height, for twitter bootstrap */
+			    line-height: 1em;
+			 
+			    /* Animation center compensation - margins should be symmetric */
+			    /* remove if not needed */
+			    margin-left: .2em;
+			 
+			    /* you can be more comfortable with increased icons size */
+			    /* font-size: 120%; */
+			 
+			    /* Font smoothing. That was taken from TWBS */
+			    -webkit-font-smoothing: antialiased;
+			    -moz-osx-font-smoothing: grayscale;
+			 
+			    /* Uncomment for 3D effect */
+			    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+			} 
+			.cropControls i.cropControlUpload:before {
+				content: '\e821';
+                margin: 6px auto;
+                font-size: 16px;
+			}
+			.cropControls i.cropControlReset{ background-position:-180px 0px;}
+			.cropControls i.cropControlRemoveCroppedImage{ background-position:-180px 0px;}
+			
+			.cropControls i:last-child{
+				margin-right:none;
+			}
+			
+			#croppicModal{
+				position:fixed;
+				width:100%;
+				height:100%;
+				top: 0;
+				left: 0;
+				display:block;
+				background:rgba(0,0,0,0.8);
+				z-index: 10000;
+				direction: ltr;
+			}
+			
+			
+			/*
+			*		PRELOADER 
+			*		With courtesy of : http://cssload.net/
+			*/
+			
+			.bubblingG {
+				text-align: center;
+				width:80px;
+				height:50px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin: -18px auto auto -40px;
+				z-index:2;
+			}
+
+			.bubblingG span {
+				display: inline-block;
+				vertical-align: middle;
+				width: 10px;
+				height: 10px;
+				margin: 25px auto;
+				background: #FFF;
+				box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+				-moz-border-radius: 50px;
+				-moz-animation: bubblingG 1s infinite alternate;
+				-webkit-border-radius: 50px;
+				-webkit-animation: bubblingG 1s infinite alternate;
+				-ms-border-radius: 50px;
+				-ms-animation: bubblingG 1s infinite alternate;
+				-o-border-radius: 50px;
+				-o-animation: bubblingG 1s infinite alternate;
+				border-radius: 50px;
+				animation: bubblingG 1s infinite alternate;
+				
+			}
+
+			#bubblingG_1 {
+				-moz-animation-delay: 0s;
+				-webkit-animation-delay: 0s;
+				-ms-animation-delay: 0s;
+				-o-animation-delay: 0s;
+				animation-delay: 0s;
+			}
+
+			#bubblingG_2 {
+				-moz-animation-delay: 0.3s;
+				-webkit-animation-delay: 0.3s;
+				-ms-animation-delay: 0.3s;
+				-o-animation-delay: 0.3s;
+				animation-delay: 0.3s;
+			}
+
+			#bubblingG_3 {
+				-moz-animation-delay: 0.6s;
+				-webkit-animation-delay: 0.6s;
+				-ms-animation-delay: 0.6s;
+				-o-animation-delay: 0.6s;
+				animation-delay: 0.6s;
+			}
+
+			@-moz-keyframes bubblingG {
+				0% {
+					width: 10px;
+					height: 10px;
+					background-color:#FFF;
+					-moz-transform: translateY(0);
+				}
+
+				100% {
+					width: 24px;
+					height: 24px;
+					background-color:#FFF;
+					-moz-transform: translateY(-21px);
+				}
+
+			}
+
+			@-webkit-keyframes bubblingG {
+				0% {
+					width: 10px;
+					height: 10px;
+					background-color:#FFF;
+					-webkit-transform: translateY(0);
+				}
+
+				100% {
+					width: 24px;
+					height: 24px;
+					background-color:#FFF;
+					-webkit-transform: translateY(-21px);
+				}
+
+			}
+
+			@-ms-keyframes bubblingG {
+				0% {
+					width: 10px;
+					height: 10px;
+					background-color:#FFF;
+					-ms-transform: translateY(0);
+				}
+
+				100% {
+					width: 24px;
+					height: 24px;
+					background-color:#FFF;
+					-ms-transform: translateY(-21px);
+				}
+
+			}
+
+			@-o-keyframes bubblingG {
+				0% {
+					width: 10px;
+					height: 10px;
+					background-color:#FFF;
+					-o-transform: translateY(0);
+				}
+
+				100% {
+					width: 24px;
+					height: 24px;
+					background-color:#FFF;
+					-o-transform: translateY(-21px);
+				}
+
+			}
+
+			@keyframes bubblingG {
+				0% {
+					width: 10px;
+					height: 10px;
+					background-color:#FFF;
+					transform: translateY(0);
+				}
+
+				100% {
+					width: 24px;
+					height: 24px;
+					background-color:#FFF;
+					transform: translateY(-21px);
+				}
+
+			}
+			
+			
+			/* some reset stlyes */
+			
+			#cropContainerEyecandy{ 
+				width:100%;
+                height:300px;
+				position: relative;
+				border-top:1px solid #ccc;
+                border-bottom:1px solid #ccc;
+                background: url(../images/placeholder.png) #e3e3e3 no-repeat center;
+            }
+			#cropContainerModal{
+                width:100%;
+                height:200px;
+                position: relative;
+                border:1px solid #ccc;
+                background: url(../images/placeholder_user.png) scroll 0 0 / 100% 100%;
+            }
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

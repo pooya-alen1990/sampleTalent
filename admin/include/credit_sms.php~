@@ -1,0 +1,99 @@
+<?php
+	//include('jdf.php');
+	error_reporting(E_ALL);
+	ini_set('display_errors','1');
+	date_default_timezone_set('Asia/Tehran');
+	$error ='';
+	### CONNECT TO DB ###
+	$server_name="localhost";
+	$username_db="sunnycart";
+	$password_db="kosenanat:dD1369";
+	$db_name="sunnycart";
+	$mysqli=new mysqli($server_name,$username_db,$password_db,$db_name) or die("Connection Failed...!");
+	$mysqli->set_charset("utf8");
+	$sum = 0;
+	$count = 0;	
+	
+	$FromDate = date('Y/m/d',mktime(0, 0, 0, date('m')  , date('d')-1, date('Y')));
+	$ToDate = date('Y/m/d');
+
+	
+		$credit_query = "SELECT * FROM transaction WHERE 1=1 ";
+			$credit_query .= " AND settlementDate BETWEEN '$FromDate' AND '$ToDate' ";
+	
+			$credit_result=$mysqli->query($credit_query);
+			while($credit_row=$credit_result->fetch_assoc()){
+				 $sum = $credit_row['amount'] + $sum;
+				 $count++;
+				 $sum_db = $sum;	
+			}
+		
+		$sum=number_format($sum,0,'.',',');
+				
+		
+##################################
+function pooya_sms_iterative($pooya_to,$pooya_message,$connection){
+	
+			$last_day = time() - (1 * 4 * 60 * 60);
+		
+			$iterative_query="SELECT * FROM sms WHERE mobile='$pooya_to' AND text='$pooya_message' AND date > $last_day ;";
+			$iterative_result = mysqli_query($connection,$iterative_query);
+			$iterative_row = mysqli_fetch_assoc($iterative_result);
+			$count_sms = mysqli_num_rows($iterative_result);
+			
+				if($count_sms==0){
+					ini_set("soap.wsdl_cache_enabled", "0");
+					//$sms_client = new SoapClient('http://87.107.121.54/post/send.asmx?wsdl', array('encoding'=>'UTF-8'));
+					$sms_client = new SoapClient('http://melipayamak.ir/post/send.asmx?wsdl', array('encoding'=>'UTF-8'));
+					
+					$parameters['username'] = "9124077897";
+					$parameters['password'] = "3755";
+					$parameters['to'] = $pooya_to;
+					$parameters['from'] = "2188806627";
+					$parameters['text'] =$pooya_message;
+					$parameters['isflash'] =false;
+					
+					$recId = $sms_client->SendSimpleSMS2($parameters)->SendSimpleSMS2Result;
+					$date = time();
+						
+					$mysqli = $connection;
+			
+					$send_sms_query = "INSERT INTO sms(`id`, `mobile`, `text`, `recId`, `date`) VALUES ('','$pooya_to','$pooya_message','$recId','$date')";
+					$send_sms_result = mysqli_query($connection,$send_sms_query);
+					return "$pooya_to $pooya_message فرستاده شد!<hr>";
+				}else{
+					return "به $pooya_to قبلا فرستاده شده است!<hr>";
+					}
+		
+		}
+########################################
+
+
+$connection = mysqli_connect('localhost','sunnycart','kosenanat:dD1369','sunnycart') OR die('FAILED...');
+mysqli_set_charset($connection, 'utf8');
+
+$users_query = "SELECT * FROM users WHERE id IN(1,2,33,63,89,138) ; ";
+	
+			$users_result=$mysqli->query($users_query);
+			
+			
+		if($count>10 && $count<500){	
+			while($users_row=$users_result->fetch_assoc()){
+				$gender = $users_row['gender'];
+				$last_name = $users_row['last_name'];
+				if($gender=='مرد'){$smsgender='آقای';}elseif($gender=='زن'){$smsgender='خانم';}
+				
+				$error = "$smsgender $last_name\n";
+				$error .= "مجموع وجوه دریافتی دیروز مبلغ".$sum."ریال و تعداد تراکنش ها ".$count." می باشد.\n با تشکر \n تیم ICT \n www.scards.ir";
+				$error .= "";
+				
+				echo pooya_sms_iterative($users_row['mobile'],$error,$connection);
+				
+				$diagram2_query_insert = "INSERT INTO `diagram2`(`id`, `day`, `credit_count`, `credit_amount`)
+																 VALUES ('','$ToDate','$count','$sum_db')";
+                $diagram2_result_insert = $mysqli->query($diagram2_query_insert);
+								
+									
+			}
+		}
+?>

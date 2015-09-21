@@ -59,6 +59,7 @@ if(SESSION_ENABLED){
  * include require files
  */
 require_once SITE_ROOT . "/business/class.DatabaseHandler.php";
+require_once SITE_ROOT . "/business/class.G.php";
 require_once SITE_ROOT . "/business/class.Validation.php";
 require_once SITE_ROOT . "/business/jdf.php";
 require_once SITE_ROOT . "/messages/messages.php";
